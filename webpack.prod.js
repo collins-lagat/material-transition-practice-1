@@ -1,17 +1,17 @@
-const path = require("path")
-const common = require("./webpack.common")
-const merge = require("webpack-merge")
-const htmlWebpackPlugin = require("html-webpack-plugin")
+const path = require('path')
+const common = require('./webpack.common')
+const merge = require('webpack-merge')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require("terser-webpack-plugin")
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
-    mode: "production",
+    mode:'production',
     output: {
-        filename: "[name].bundle.[contentHash].js",
-        path: path.resolve(__dirname, "dist")
+        filename: '[name].bundle.[contentHash].js',
+        path: path.resolve(__dirname, 'dist')
     },
     module:{
         rules: [
@@ -36,7 +36,7 @@ module.exports = merge(common, {
             new OptimizeCssAssetsPlugin(),
             new TerserPlugin(),
             new htmlWebpackPlugin({
-                template: "./src/index.html",
+                template: './src/index.html',
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
