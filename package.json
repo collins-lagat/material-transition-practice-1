@@ -41,5 +41,7 @@
     "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "velocity-animate": "^2.0.5"
+  }
 }
